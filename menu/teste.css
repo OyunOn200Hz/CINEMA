@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../font/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+html, body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #f4f4f4;
+    background-color: gray;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato' !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 4rem;
+    font-family: Bebas Neue;
+    animation: pop 1s ease-in-out 0.2s forwards;
+}
+
+header span {
+    color: red;
+}
+
+header form {
+    position: fixed;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    border-radius: var(--rad);
+}
+
+input, button {
+    height: var(--height);
+    font-family: var(--font-fam);
+    border: 0;
+    color: var(--color-dark);
+    font-size: 1.8rem;
+}
+
+input[type="search"] {
+    outline: 0;
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+}
+
+button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    background: red;
+    border-radius: 0 var(--rad) var(--rad) 0;
+}
+
+input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+}
+
+input:not(:placeholder-shown) + button {
+    display: block;
+}
+
+label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+}
+
+:root {
+    --rad: .7rem;
+    --dur: .3s;
+    --color-dark: #2f2f2f;
+    --color-light: #fff;
+    --color-brand: red;
+    --font-fam: 'Lato', sans-serif;
+    --height: 3rem;
+    --btn-width: 3rem;
+    --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+}

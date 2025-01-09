@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../font/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+html, body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #f4f4f4;
+    background-color: gray;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato' !important;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    position: static;
+    margin: 0;
+    font-size: 4rem;
+    font-family: Bebas Neue;
+    animation: pop 1s ease-in-out 0.2s forwards;
+    width: 100%;
+}
+
+header span {
+    color: red;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+.input-recherche{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: red;
+    padding-right: 40px;
+    color:#fff;
+  }
+  .input-recherche::placeholder{
+    color: grey;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-recherche{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-recherche:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-recherche:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+  header .barre-recherche {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.fa-search::before {
+    content: "🔎";
+} 
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
