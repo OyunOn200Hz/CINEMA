@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="teste.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <title>CinéVillage</title>
 </head>
-<body class="dark">
+<body>
     <header>
         <h1>Ciné<span>Village</span></h1>
-        <form onsubmit="event.preventDefault();" role="search">
-            <label for="search">Search for stuff</label>
-            <input id="search" type="search" placeholder="Chercher un Film..." autofocus required />
-            <button type="submit">Go</button>    
-        </form>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="films.php">Films</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Accueil</h2>
-            <p>Bienvenue sur le site de CinéVillage, le cinéma de votre village !</p>
-            <p>Retrouvez ici la liste des films à l'affiche et les horaires de séances.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 CinéVillage</p>
-    </footer>
+    <div class="TitreEnAvant">
+        <h2>En Avant :</h2>
+    </div> 
+    <div class="EnAvant" id="EnAvant">
+        <div class="film1" id="film1">
+            <div class="AfficheFilm1" id="AfficheFilm1"></div>
+            <div class="NomFilm1" id="NomFilm1"></div>
+            <div class="Volet" id="Volet1"></div>
+        </div>
+        <div class="film2" id="film2">
+            <div class="AfficheFilm2" id="AfficheFilm2"></div>
+            <div class="NomFilm2" id="NomFilm2"></div>
+            <div class="Volet" id="Volet2"></div>
+        </div>
+        <div class="film3" id="film3">
+            <div class="AfficheFilm3" id="AfficheFilm3"></div>
+            <div class="NomFilm3" id="NomFilm3"></div>
+            <div class="Volet" id="Volet3"></div>
+        </div>
+    </div>
+    <button id="loadMoreBtn">Voir plus de films</button>
+    <script src="./script2.js"></script>
 </body>
 </html>

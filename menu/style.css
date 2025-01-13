@@ -19,7 +19,6 @@ body {
     background-color: gray;
     height: 100%;
     font-family: "Bebas Neue";
-
 }
 
 header {
@@ -43,18 +42,17 @@ header span {
     display: flex;
     justify-content: center;
     color: white;
-    
 }
 
 .TitreEnAvant h2 {
-    margin: 1%;
+    margin: 20px;
     background-color: #333;
     border-radius: 25px;
     width: 15%;
     text-align: center;
     font-size: 3vw;
 }
-    
+
 .EnAvant {
     margin-left: 5%;
     height: 65vh;
@@ -67,13 +65,14 @@ header span {
     border-radius: 25px;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
+    position: relative;
+    overflow: hidden;
 }
 
 .film1 { 
     grid-area: 1 / 1 / 2 / 2; 
     background-color: blueviolet;
     animation-delay: 250ms;
-
 }
 
 .film2 { 
@@ -93,6 +92,8 @@ header span {
     height: 90%;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
 .NomFilm1, .NomFilm2, .NomFilm3 {
@@ -104,4 +105,26 @@ header span {
     align-items: center;
     color: white;
     font-size: 3vw;
+}
+
+.AfficheFilm1::after, .AfficheFilm2::after, .AfficheFilm3::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -75%;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: bottom 0.5s ease-in-out;
+    color: black;
+}
+
+.AfficheFilm1:hover::after, .AfficheFilm2:hover::after, .AfficheFilm3:hover::after {
+    bottom: 0;
 }
