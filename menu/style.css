@@ -108,7 +108,7 @@ header span {
 }
 
 .AfficheFilm1::after, .AfficheFilm2::after, .AfficheFilm3::after {
-    content: attr(data-description);
+    content: attr(film-description);
     position: absolute;
     bottom: -75%;
     left: 0;
@@ -119,12 +119,13 @@ header span {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 1rem;
-    transition: bottom 0.5s ease-in-out;
-    color: black;
+    text-align: center ;
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+    font-size: 2vw;
 }
 
 .AfficheFilm1:hover::after, .AfficheFilm2:hover::after, .AfficheFilm3:hover::after {
+    opacity: 1;
     bottom: 0;
 }

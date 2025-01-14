@@ -55,14 +55,13 @@ header span {
 
 .EnAvant {
     margin-left: 5%;
-    height: auto;
+    height: 65vh;
     width: 90%;
     display: grid;
     grid-column-gap: 5%;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-.film {
+.film1, .film2, .film3 {
     border-radius: 25px;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
@@ -70,16 +69,25 @@ header span {
     overflow: hidden;
 }
 
-.AfficheFilm {
-    display: flex;
-    height: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
+.film1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    background-color: blueviolet;
+    animation-delay: 250ms;
 }
 
-.NomFilm {
+.film2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    background-color: chartreuse;
+    animation-delay: 500ms;
+}
+
+.film3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    background-color: deepskyblue;
+    animation-delay: 750ms;
+}
+
+.NomFilm1, .NomFilm2, .NomFilm3 {
     background-color: #333;
     height: 10%;
     display: flex;
@@ -90,38 +98,34 @@ header span {
     font-size: 3vw;
 }
 
-.Volet {
-    position: absolute;
-    bottom: -50%;
-    left: 0;
+.AfficheFilm1, .AfficheFilm2, .AfficheFilm3 {
+    display: flex;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.AfficheFilm1 .description, .AfficheFilm2 .description, .AfficheFilm3 .description {
+    content: attr(film-description);
     width: 100%;
-    height: 50%;
-    background: rgba(255, 255, 255, 0.8);
+    height: 75%;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1rem;
-    transition: bottom 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 2vw;
 }
 
-.film:hover .Volet {
-    bottom: 0;
-}
-
-#loadMoreBtn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#loadMoreBtn:hover {
-    background-color: #555;
+.AfficheFilm1:hover .description, .AfficheFilm2:hover .description, .AfficheFilm3:hover .description {
+    opacity: 1;
+    visibility: visible;
 }
