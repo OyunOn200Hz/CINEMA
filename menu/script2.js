@@ -31,3 +31,40 @@ const listeFilms2024 = ["tt26446278",//Le comte de monte cristo
                         "tt27490099", //L'amour ouf
                         "tt18259086" //Sonic 3                        
 ];
+
+function chargerPlusDeFilms() {
+    let filmsAffiches = 0;
+    document.getElementById('ChargerPlusDeFilms').addEventListener('click', () => {
+        const conteneurFilmsSupplementaires = document.querySelector('.EnAvant');
+        const filmsAAfficher = listeFilms2024.slice(filmsAffiches, filmsAffiches + 6);
+
+        filmsAAfficher.forEach((filmId, index) => {
+            const filmIndex = filmsAffiches + index + 4;
+            const filmElementId = `AfficheFilm${filmIndex}`;
+            const titleElementId = `NomFilm${filmIndex}`;
+
+            const filmDiv = document.createElement('div');
+            filmDiv.classList.add(`film${filmIndex}`);
+            filmDiv.innerHTML = `
+                <div id="${filmElementId}" class="AfficheFilm${filmIndex}" film-description=""></div>
+                <div id="${titleElementId}" class="NomFilm${filmIndex}"></div>
+            `;
+            conteneurFilmsSupplementaires.appendChild(filmDiv);
+
+            fetchAndDisplayMovie(filmId, filmElementId, filmElementId, titleElementId);
+        });
+
+        filmsAffiches += 6;
+
+        const dernierFilm = document.getElementById(`AfficheFilm${filmsAffiches + 3}`);
+        if (dernierFilm) {
+            dernierFilm.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        if (filmsAffiches >= listeFilms2024.length) {
+            document.getElementById('ChargerPlusDeFilms').style.display = 'none';
+        }
+    });
+}
+
+chargerPlusDeFilms();
