@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(font/BebasNeue-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    height: 100%;
+    font-family: "Bebas Neue";
+    overflow-y: auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5rem;
+}
+
+header span {
+    color: red;
+}
+
+.container {  
+    height: 850px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "AfficheFilm TitreFilm GenreFilm"
+      "AfficheFilm DescriptionFilm DescriptionFilm"
+      "AfficheFilm DateFilm NoteFilm"
+      "AfficheFilm RealisateurFilm ActeursFilm";
+  }
+  
+  .AfficheFilm { grid-area: AfficheFilm; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  .TitreFilm { grid-area: TitreFilm; }
+  
+  .GenreFilm { grid-area: GenreFilm; }
+  
+  .DescriptionFilm { grid-area: DescriptionFilm; }
+  
+  .DateFilm { grid-area: DateFilm; }
+  
+  .NoteFilm { grid-area: NoteFilm; }
+  
+  .RealisateurFilm { grid-area: RealisateurFilm; }
+  
+  .ActeursFilm { grid-area: ActeursFilm; }
+  
