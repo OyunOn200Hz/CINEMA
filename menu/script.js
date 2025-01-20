@@ -1,4 +1,4 @@
-function fetchAndDisplayMovie(idFilms, posterElementId, descriptionFilm, titleElementId) {
+function fetchAndDisplayMovie(idFilms, posterElementId, titleElementId) {
     fetch(`https://www.omdbapi.com/?apikey=586caa23&i=${(idFilms)}`)
         .then(response => response.json())
         .then(data => {
