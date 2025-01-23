@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../font/BebasNeue-Regular.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    height: 100%;
+    font-family: "Bebas Neue";
+    overflow-y: auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5rem;
+    color: white;
+}
+
+header span {
+    color: red;
+}
+
+.barre-recherche {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+#search {
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 50px 0 0 50px;
+    border: none;
+    outline: none;
+    font-family: 'Bebas Neue';
+}
+
+.recherche-btn {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+    width: 3rem;
+}
+
+.resultats {
+    margin-left: 5%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    flex-wrap: wrap;
+    column-gap: 2%;
+}
+
+.films {
+    border-radius: 25px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.AfficheFilm {
+    display: flex;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+}
+
+.NomFilm {
+    background-color: #333;
+    height: 10%;
+    display: flex;
+    border-radius: 0px 0px 25px 25px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+.afficher-plus-btn {
+    display: none;
+    margin: 10px auto;
+    padding: 5px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Bebas Neue';
+}
+
+.error-message {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    height: 30vh;
+}
+
+@media (max-width: 1024px) {
+    .resultats {
+        grid-template-columns: 1fr;
+    }
+
+    .NomFilm {
+        font-size: 9vw;
+    }
+
+    .error-message {
+        font-size: 9vw;
+        height: auto;
+    }
+}

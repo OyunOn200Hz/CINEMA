@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../font/BebasNeue-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    height: 100%;
+    font-family: "Bebas Neue";
+    overflow-y: auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5rem;
+    color: white;
+}
+
+header span {
+    color: red;
+}
+
+.container {  
+    height: 850px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "AfficheFilm TitreFilm GenreFilm"
+      "AfficheFilm DescriptionFilm DescriptionFilm"
+      "AfficheFilm DateFilm NoteFilm"
+      "AfficheFilm RealisateurFilm ActeursFilm";
+  }
+  
+.AfficheFilm { grid-area: AfficheFilm; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 25px;
+    margin-left: 25px;
+    background-position: center;
+    border: red solid 5px;
+}
+  
+.TitreFilm { grid-area: TitreFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px auto;
+
+    
+}
+  
+  .GenreFilm { grid-area: GenreFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: auto;}
+  
+  .DescriptionFilm { grid-area: DescriptionFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 0 20px;
+  }
+  
+  .DateFilm { grid-area: DateFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px auto;}
+  
+  .NoteFilm { grid-area: NoteFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px auto;}
+  
+  .RealisateurFilm { grid-area: RealisateurFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px auto;}
+  
+  .ActeursFilm { grid-area: ActeursFilm; 
+    font-size: 3rem;
+    color: white;
+    align-self: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 0 20px;}
+
+
+
+  

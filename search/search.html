@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesearch.css">
+    <title>CinéVillage</title>
+</head>
+<body>
+    <header>
+      <a href="../index.html" style="text-decoration: none"><h1>Ciné<span>Village</span></h1></a>
+    </header>
+    <form action="" class="barre-recherche">
+        <input type="text" name="search" id="search" placeholder="Search for a movie">
+        <button class="recherche-btn" type="submit" id="recherche-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </form>
+      <div id="resultats" class="resultats">
+        <div id="AfficheFilm" class="AfficheFilm"></div>
+        <div id="NomFilm" class="NomFilm"></div>
+      </div>
+      <button id="ChargerPlusDeFilms" class="afficher-plus-btn">Afficher plus de films</button>
+    <script src="scriptsearch.js"></script>
+</body>
+</html>

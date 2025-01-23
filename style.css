@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(font/BebasNeue-Regular.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    height: 100%;
+    font-family: "Bebas Neue";
+    overflow-y: auto;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5rem;
+}
+
+header span {
+    color: red;
+}
+
+header a {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    color: red;
+    text-decoration: none;
+}
+
+.TitreEnAvant {
+    display: flex;
+    justify-content: center;
+    color: white;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.TitreEnAvant h2 {
+    background-color: #333;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 3vw;
+    margin: 18px;
+    width: 90%;
+}
+
+.EnAvant {
+    margin-left: 5%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    column-gap: 2%;
+}
+
+.film1, .film2, .film3, .film4, .film5, .film6, .film7, .film8, .film9, .film10, .film11, .film12, .film13, .film14, .film15 {
+    border-radius: 25px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.film1 {
+    animation-delay: 250ms;
+}
+
+.film2 {
+    animation-delay: 500ms;
+}
+
+.film3 {
+    animation-delay: 750ms;
+}
+
+.AfficheFilm1, .AfficheFilm2, .AfficheFilm3, .AfficheFilm4, .AfficheFilm5, .AfficheFilm6, .AfficheFilm7, .AfficheFilm8, .AfficheFilm9, .AfficheFilm10, .AfficheFilm11, .AfficheFilm12, .AfficheFilm13, .AfficheFilm14, .AfficheFilm15 {
+    display: flex;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+}
+
+.NomFilm1, .NomFilm2, .NomFilm3, .NomFilm4, .NomFilm5, .NomFilm6, .NomFilm7, .NomFilm8, .NomFilm9, .NomFilm10, .NomFilm11, .NomFilm12, .NomFilm13, .NomFilm14, .NomFilm15 {
+    background-color: #333;
+    height: 10%;
+    display: flex;
+    border-radius: 0px 0px 25px 25px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5vw;
+}
+
+.AfficheFilm1::after, .AfficheFilm2::after, .AfficheFilm3::after, .AfficheFilm4::after, .AfficheFilm5::after, .AfficheFilm6::after, .AfficheFilm7::after, .AfficheFilm8::after, .AfficheFilm9::after, .AfficheFilm10::after, .AfficheFilm11::after, .AfficheFilm12::after, .AfficheFilm13::after, .AfficheFilm14::after, .AfficheFilm15::after {
+    content: attr(film-description);
+    position: absolute;
+    bottom: -75%;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.5), rgba(255,255,255,0.75), rgba(255,255,255,1));
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center ;
+    opacity: 0;
+    transition: opacity 0.4s, bottom 0.4s;
+    font-size: 2vw;
+
+}
+
+.AfficheFilm1:hover::after, .AfficheFilm2:hover::after, .AfficheFilm3:hover::after, .AfficheFilm4:hover::after, .AfficheFilm5:hover::after, .AfficheFilm6:hover::after, .AfficheFilm7:hover::after, .AfficheFilm8:hover::after, .AfficheFilm9:hover::after, .AfficheFilm10:hover::after, .AfficheFilm11:hover::after, .AfficheFilm12:hover::after, .AfficheFilm13:hover::after, .AfficheFilm14:hover::after, .AfficheFilm15:hover::after {
+    opacity: 1;
+    bottom: 0;
+}
+
+.afficher-plus-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 5px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Bebas Neue';
+}
+
+@media (max-width: 1024px) {
+    .EnAvant {
+        grid-template-columns: 1fr;
+    }
+
+    .NomFilm1, .NomFilm2, .NomFilm3, .NomFilm4, .NomFilm5, .NomFilm6, .NomFilm7, .NomFilm8, .NomFilm9, .NomFilm10, .NomFilm11, .NomFilm12, .NomFilm13, .NomFilm14, .NomFilm15 {
+        font-size: 9vw;
+    }
+    
+}
+
+@media (max-width: 512px) {
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
